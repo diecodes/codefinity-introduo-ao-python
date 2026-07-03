@@ -9,7 +9,11 @@ grocery_inventory = {
 eggs_price = grocery_inventory["Eggs"][1]
 if eggs_price > 5:
     print("Eggs are too expensive, reducing the price by $1.")
-    grocery_inventory["Eggs"] = ("Dairy", 1, 30)
+    grocery_inventory["Eggs"] = (
+    grocery_inventory["Eggs"][0],      # “Dairy”
+    eggs_price - 1,                    # 5.50 − 1 → 4.50
+    grocery_inventory["Eggs"][2]       # 30
+    )
 else:
     print("The price of Eggs is reasonable.")
 
